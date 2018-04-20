@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import data from './json/locations.json'
 import Map from './GoogleApiComponent'
-
 
 class App extends Component {
 
@@ -15,19 +13,13 @@ class App extends Component {
 
     const locations = data.locations
     const reExp = new RegExp(this.state.search, "i")
-    console.log(locations)
-
-    console.log(reExp)
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header>
+
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
         <section>
 
           <Map/>
