@@ -3,10 +3,12 @@ import GoogleMapReact from 'google-map-react';
 import {fitBounds} from 'google-map-react/utils'
 import apiKey from './apiKey.json'
 import data from './json/locations.json'
+import pin from './google-maps-icon-blank-hi.png'
 
 
-const AnyReactComponent = ({text}) => <h1>{text}</h1>;
-
+// const AnyReactComponent = ({text}) => <h1>{text}</h1>;
+const  AnyReactComponent = () => <img src="http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png" alt=""/>
+// https://sites.google.com/site/gmapsdevelopment/
 class SimpleMap extends Component {
 
   render() {
@@ -40,7 +42,7 @@ class SimpleMap extends Component {
         <GoogleMapReact
           bootstrapURLKeys={{key: apiKey.googleMapsApi}}
           defaultCenter={center}
-          defaultZoom={zoom + 1}
+          defaultZoom={ zoom + 1}
         >
 
           {
