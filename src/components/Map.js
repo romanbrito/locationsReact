@@ -43,7 +43,7 @@ const MapComponent = compose(
         key={marker.label}
         position={marker.coordinates}
         label={marker.label}
-        onClick={e => console.log('you clicked')}
+        onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
       />
     ))}
   </GoogleMap>
