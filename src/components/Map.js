@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import {compose, withProps, lifecycle} from 'recompose'
+import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
+import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import data from '../json/locations.json'
 
 const MapComponent = compose(
@@ -8,7 +9,14 @@ const MapComponent = compose(
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDP1umTdbqfnYTGbUuaWtqBdcTE0TcDeHY&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{height: `100%`}}/>,
     containerElement: <div style={{height: `400px`}}/>,
-    mapElement: <div style={{height: `100%`}}/>
+    mapElement: <div style={{height: `100%`}}/>,
+  }),
+  withHandlers({
+    onMarkerClustererClick: () => (markerClusterer) => {
+      const clickedMarkers = markerClusterer.getMarkers()
+      console.log(`Current clicked markers length: ${clickedMarkers.length}`)
+      console.log(clickedMarkers)
+    },
   }),
   lifecycle({
     componentWillMount() {
@@ -23,6 +31,7 @@ const MapComponent = compose(
           }
 
           map.fitBounds(bounds)
+
         }
       })
     }
@@ -38,6 +47,13 @@ const MapComponent = compose(
       <Marker position={{lat: -34.397, lng: 150.644}}/>
     )}
 
+    <MarkerClusterer
+      onClick={props.onMarkerClustererClick}
+      averageCenter
+      enableRetinaIcons
+      gridSize={15}
+    >
+
     {data.locations.map(marker => (
       <Marker
         key={marker.label}
@@ -46,6 +62,8 @@ const MapComponent = compose(
         onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
       />
     ))}
+    </MarkerClusterer>
+
   </GoogleMap>
 ))
 

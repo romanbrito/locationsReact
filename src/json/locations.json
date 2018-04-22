@@ -1,25 +1,6 @@
 {
   "locations": [
     {
-      "name": "Great Hills",
-      "address": "9828 Great Hills Trail #140",
-      "city": "Austin",
-      "state": "TX",
-      "zip": "78759",
-      "phone": "512-338-1338",
-      "hours1": "Mon-Fri 10:30am - 8pm",
-      "hours2": "Sat 11am - 8pm",
-      "hours3": "Sun 11am - 6pm",
-      "place_id": "",
-      "label": "GH",
-      "coordinates": {
-        "lat": 30.395012,
-        "lng": -97.749017
-      },
-      "houseMenuUrl": ["House_GH"],
-      "cateringMenuUrl": ["Catering_GH"]
-    },
-    {
       "name": "Lakeline",
       "address": "14010 US-183 #500",
       "city": "Austin",
