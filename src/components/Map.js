@@ -42,6 +42,7 @@ const MapComponent = compose(
       <Marker
         key={marker.label}
         position={marker.coordinates}
+        label={marker.label}
       />
     ))}
   </GoogleMap>
