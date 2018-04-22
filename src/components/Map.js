@@ -17,10 +17,11 @@ const MapComponent = compose(
           //console.log('zoom to markers')
           const bounds = new window.google.maps.LatLngBounds()
 
-          data.locations.map(location => {
-            const loc = new window.google.maps.LatLng(location.coordinates)
+          for (let i = 0; i < data.locations.length; i++) {
+            const loc = new window.google.maps.LatLng(data.locations[i].coordinates)
             bounds.extend(loc)
-          })
+          }
+
           map.fitBounds(bounds)
         }
       })
@@ -53,7 +54,6 @@ class Map extends Component {
     return (
       <MapComponent
         isMarkerShown
-        ref={(map) => { console.log(map) }}
       />
     )
   }
