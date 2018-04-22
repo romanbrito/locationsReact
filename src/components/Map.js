@@ -43,6 +43,7 @@ const MapComponent = compose(
         key={marker.label}
         position={marker.coordinates}
         label={marker.label}
+        onClick={e => console.log('you clicked')}
       />
     ))}
   </GoogleMap>
