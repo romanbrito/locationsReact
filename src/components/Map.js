@@ -22,7 +22,6 @@ const MapComponent = compose(
     componentWillMount() {
       this.setState({
         zoomToMarkers: map => {
-          //console.log('zoom to markers')
           const bounds = new window.google.maps.LatLngBounds()
 
           for (let i = 0; i < data.locations.length; i++) {
@@ -43,9 +42,6 @@ const MapComponent = compose(
     ref={props.zoomToMarkers}
     defaultZoom={8}
     defaultCenter={{lat: -34.397, lng: 150.644}}>
-    {props.isMarkerShown && (
-      <Marker position={{lat: -34.397, lng: 150.644}}/>
-    )}
 
     <MarkerClusterer
       onClick={props.onMarkerClustererClick}
@@ -72,9 +68,7 @@ class Map extends Component {
   render() {
 
     return (
-      <MapComponent
-        isMarkerShown
-      />
+      <MapComponent/>
     )
   }
 
