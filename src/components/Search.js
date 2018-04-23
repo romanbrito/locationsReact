@@ -9,7 +9,8 @@ class Search extends Component {
 
   componentWillMount() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition( position => console.log(position.coords),
+      navigator.geolocation.getCurrentPosition( position =>
+          this.setState({currentPosition: {lat:position.coords.latitude, lng:position.coords.longitude}}),
         () => console.log('error'))
     }
   }
@@ -32,7 +33,9 @@ class Search extends Component {
             onChange={(e) => this.setState({search: e.target.value})}
           />
 
+          <h1>latitude {this.state.currentPosition && this.state.currentPosition.lat} longitude {this.state.currentPosition && this.state.currentPosition.lng}</h1>
 
+          {console.log(this.state.currentPosition)}
         </section>
 
 
