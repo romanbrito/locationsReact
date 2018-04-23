@@ -10,6 +10,7 @@ class Search extends Component {
   state = {
     search: '',
     currentPosition: null,
+    locations: data.locations
   }
 
   componentWillMount() {
@@ -22,7 +23,6 @@ class Search extends Component {
 
   render() {
     const locations = data.locations
-    const destinations = locations.map(location => location.coordinates)
     const reExp = new RegExp(this.state.search, "i")
 
     return (
@@ -41,7 +41,7 @@ class Search extends Component {
 
           <h1>latitude {this.state.currentPosition && this.state.currentPosition.lat} longitude {this.state.currentPosition && this.state.currentPosition.lng}</h1>
 
-          {this.state.currentPosition && this._distanceMatrix([this.state.currentPosition], destinations)}
+          {this.state.currentPosition && this._distanceMatrix([this.state.currentPosition], locations)}
 
         </section>
 
@@ -49,7 +49,7 @@ class Search extends Component {
         <article>
           <ul>
             {
-              locations.filter(location =>
+              this.state.locations.filter(location =>
                 location.name.search(reExp) !== -1 ||
                 location.address.search(reExp) !== -1 ||
                 location.zip.search(reExp) !== -1 ||
@@ -64,7 +64,8 @@ class Search extends Component {
     )
   }
 
-  _distanceMatrix = (origins, destinations) => {
+  _distanceMatrix = (origins, locations) => {
+    const destinations = locations.map(location => location.coordinates)
 
     googleMapsClient.distanceMatrix({
       origins: origins,
@@ -73,7 +74,17 @@ class Search extends Component {
       units: 'imperial',
     }, (err, res) => {
       if (res) {
-        console.log(res)
+        console.log(res.json.rows[0].elements)
+
+        // merging distance with locations array
+        // const location_distance = distance.map(function (element, index) {
+        //   data[index].distance = element.distance.value;
+        //   data[index].miles = element.distance.text;
+        //   return data[index];
+        // }).sort(function (a, b) {  // sorting locations array
+        //   return a.distance - b.distance;
+        // })
+
       } else {
         console.log('there was an error')
       }
