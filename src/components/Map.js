@@ -3,10 +3,13 @@ import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import data from '../json/locations.json'
+import apiKey from '../apiKey.json'
+
+const googleMapURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey.googleMapsApi + '&v=3.exp&libraries=geometry,drawing,places'
 
 const MapComponent = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDP1umTdbqfnYTGbUuaWtqBdcTE0TcDeHY&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: googleMapURL,
     loadingElement: <div style={{height: `100%`}}/>,
     containerElement: <div style={{height: `400px`}}/>,
     mapElement: <div style={{height: `100%`}}/>,

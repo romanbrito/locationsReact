@@ -1,5 +1,10 @@
 import React, {Component} from 'react'
 import data from '../json/locations'
+import apiKey from '../apiKey.json'
+
+const googleMapsClient = require('@google/maps').createClient({
+  key: apiKey.googleMapsApi
+})
 
 class Search extends Component {
   state = {
@@ -17,6 +22,7 @@ class Search extends Component {
 
   render() {
     const locations = data.locations
+    const destinations = locations.map(location => location.coordinates)
     const reExp = new RegExp(this.state.search, "i")
 
     return (
@@ -35,7 +41,8 @@ class Search extends Component {
 
           <h1>latitude {this.state.currentPosition && this.state.currentPosition.lat} longitude {this.state.currentPosition && this.state.currentPosition.lng}</h1>
 
-          {console.log(this.state.currentPosition)}
+          {this.state.currentPosition && this._distanceMatrix([this.state.currentPosition], destinations)}
+
         </section>
 
 
@@ -56,6 +63,23 @@ class Search extends Component {
       </div>
     )
   }
+
+  _distanceMatrix = (origins, destinations) => {
+
+    googleMapsClient.distanceMatrix({
+      origins: origins,
+      destinations: destinations,
+      mode: 'driving',
+      units: 'imperial',
+    }, (err, res) => {
+      if (res) {
+        console.log(res)
+      } else {
+        console.log('there was an error')
+      }
+    })
+  }
+
 }
 
 export default Search
