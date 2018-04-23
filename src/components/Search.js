@@ -4,6 +4,14 @@ import data from '../json/locations'
 class Search extends Component {
   state = {
     search: '',
+    currentPosition: null,
+  }
+
+  componentWillMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition( position => console.log(position.coords),
+        () => console.log('error'))
+    }
   }
 
   render() {
@@ -41,7 +49,6 @@ class Search extends Component {
                 .map(list => <li key={list.label}>{list.name}</li>)}
           </ul>
         </article>
-
 
       </div>
     )
