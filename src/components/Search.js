@@ -10,7 +10,8 @@ class Search extends Component {
   state = {
     search: '',
     currentPosition: null,
-    locations: data.locations
+    locations: data.locations,
+    isGeoSorted: false
   }
 
   componentWillMount() {
@@ -41,7 +42,7 @@ class Search extends Component {
 
           <h1>latitude {this.state.currentPosition && this.state.currentPosition.lat} longitude {this.state.currentPosition && this.state.currentPosition.lng}</h1>
 
-          {this.state.currentPosition && this._distanceMatrix([this.state.currentPosition], locations)}
+          {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
 
         </section>
 
@@ -56,7 +57,7 @@ class Search extends Component {
                 location.state.search(reExp) !== -1 ||
                 location.city.search(reExp) !== -1
               )
-                .map(list => <li key={list.label}>{list.name}</li>)}
+                .map(list => <li key={list.label}>{list.name} {this.state.isGeoSorted && list.miles}</li>)}
           </ul>
         </article>
 
@@ -75,18 +76,21 @@ class Search extends Component {
     }, (err, res) => {
       if (res) {
         console.log(res.json.rows[0].elements)
+        const distance = res.json.rows[0].elements
 
         // merging distance with locations array
-        // const location_distance = distance.map(function (element, index) {
-        //   data[index].distance = element.distance.value;
-        //   data[index].miles = element.distance.text;
-        //   return data[index];
-        // }).sort(function (a, b) {  // sorting locations array
-        //   return a.distance - b.distance;
-        // })
+        const location_distance = distance.map(function (element, index) {
+          locations[index].distance = element.distance.value;
+          locations[index].miles = element.distance.text;
+          return locations[index];
+        }).sort(function (a, b) {  // sorting locations array
+          return a.distance - b.distance;
+        })
+
+        this.setState({locations: location_distance, isGeoSorted: true})
 
       } else {
-        console.log('there was an error')
+        console.log('Geo Location error')
       }
     })
   }
