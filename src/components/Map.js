@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Col} from 'react-bootstrap'
 import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
@@ -53,14 +54,14 @@ const MapComponent = compose(
       gridSize={15}
     >
 
-    {data.locations.map(marker => (
-      <Marker
-        key={marker.label}
-        position={marker.coordinates}
-        label={marker.label}
-        onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
-      />
-    ))}
+      {data.locations.map(marker => (
+        <Marker
+          key={marker.label}
+          position={marker.coordinates}
+          label={marker.label}
+          onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
+        />
+      ))}
     </MarkerClusterer>
 
   </GoogleMap>
@@ -71,7 +72,9 @@ class Map extends Component {
   render() {
 
     return (
-      <MapComponent/>
+      <Col lg={6}>
+        <MapComponent/>
+      </Col>
     )
   }
 

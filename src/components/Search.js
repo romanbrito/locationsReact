@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import data from '../json/locations'
 import apiKey from '../apiKey.json'
 import './Search.css'
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Col} from 'react-bootstrap'
 
 const googleMapsClient = require('@google/maps').createClient({
   key: apiKey.googleMapsApi
@@ -29,53 +29,47 @@ class Search extends Component {
     const reExp = new RegExp(this.state.search, "i")
 
     return (
-      <Grid>
-      <Row className="Search">
+      <div>
+        <Col>
+          <div className="locations-list">
+            <input
+              type="search"
+              className="input-search"
+              name="search"
+              id="search"
+              placeholder="Name, City, State"
+              value={this.state.search}
+              onChange={(e) => this.setState({search: e.target.value})}
+            />
+          </div>
+
+          {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
+
+          {
+            this.state.locations.filter(location =>
+              location.name.search(reExp) !== -1 ||
+              location.address.search(reExp) !== -1 ||
+              location.zip.search(reExp) !== -1 ||
+              location.state.search(reExp) !== -1 ||
+              location.city.search(reExp) !== -1
+            )
+              .map(list =>
+
+                <div key={list.label}>
+                  <h4>{list.name}</h4>
+                  <p>{list.address}</p>
+                  <p>{list.city} {list.state} {list.zip} </p>
+                  <a href="tel: + {list.phone}"> T. {list.phone}</a>
+                  <p>{list.hours1}</p>
+                  <p>{list.hours2}</p>
+                  <p>{list.hours3}</p>
+                  {list.miles && <p>Distance: {list.miles} miles</p>}
+                </div>
+              )}
+        </Col>
 
 
-          <input
-            type="search"
-            className="input-search"
-            name="search"
-            id="search"
-            placeholder="Name, City, State"
-            value={this.state.search}
-            onChange={(e) => this.setState({search: e.target.value})}
-          />
-
-
-      </Row>
-
-        {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
-
-            {
-              this.state.locations.filter(location =>
-                location.name.search(reExp) !== -1 ||
-                location.address.search(reExp) !== -1 ||
-                location.zip.search(reExp) !== -1 ||
-                location.state.search(reExp) !== -1 ||
-                location.city.search(reExp) !== -1
-              )
-                .map(list =>
-
-                      <Row key={list.label}>
-                        <Col lg={6}>
-                          <h4>{list.name}</h4>
-                          <p>{list.address}</p>
-                          <p>{list.city} {list.state} {list.zip} </p>
-                          <a href="tel: + {list.phone}"> T. {list.phone}</a>
-                          <p>{list.hours1}</p>
-                          <p>{list.hours2}</p>
-                          <p>{list.hours3}</p>
-                          {list.miles && <p>Distance: {list.miles} miles</p>}
-                        </Col>
-                      </Row>
-
-
-                  )}
-
-
-      </Grid>
+      </div>
     )
   }
 

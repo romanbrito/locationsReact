@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Grid} from 'react-bootstrap'
 import Search from './components/Search'
 import Map from './components/Map'
 
@@ -8,10 +9,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Map/>
-        <Search/>
+        <Grid>
+          <Map/>
+          <Search/>
+        </Grid>
       </div>
-    );
+    )
   }
 }
 
