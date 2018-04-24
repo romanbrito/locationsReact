@@ -16,8 +16,8 @@ class Search extends Component {
 
   componentWillMount() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition( position =>
-          this.setState({currentPosition: {lat:position.coords.latitude, lng:position.coords.longitude}}),
+      navigator.geolocation.getCurrentPosition(position =>
+          this.setState({currentPosition: {lat: position.coords.latitude, lng: position.coords.longitude}}),
         () => console.log('error'))
     }
   }
@@ -57,7 +57,12 @@ class Search extends Component {
                 location.state.search(reExp) !== -1 ||
                 location.city.search(reExp) !== -1
               )
-                .map(list => <li key={list.label}>{list.name} {this.state.isGeoSorted && list.miles}</li>)}
+                .map(list =>
+                  <li key={list.label}>
+
+                    {list.name} {this.state.isGeoSorted && list.miles}
+
+                  </li>)}
           </ul>
         </article>
 
