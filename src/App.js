@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, {Component} from 'react'
 import Search from './components/Search'
 import Map from './components/Map'
 
@@ -16,4 +15,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import data from '../json/locations'
 import apiKey from '../apiKey.json'
+import './Search.css'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 const googleMapsClient = require('@google/maps').createClient({
   key: apiKey.googleMapsApi
@@ -27,8 +29,9 @@ class Search extends Component {
     const reExp = new RegExp(this.state.search, "i")
 
     return (
-      <div className="Search">
-        <section>
+      <Grid>
+      <Row className="Search">
+
 
           <input
             type="search"
@@ -40,15 +43,11 @@ class Search extends Component {
             onChange={(e) => this.setState({search: e.target.value})}
           />
 
-          <h1>latitude {this.state.currentPosition && this.state.currentPosition.lat} longitude {this.state.currentPosition && this.state.currentPosition.lng}</h1>
 
-          {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
+      </Row>
 
-        </section>
+        {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
 
-
-        <article>
-          <ul>
             {
               this.state.locations.filter(location =>
                 location.name.search(reExp) !== -1 ||
@@ -58,15 +57,25 @@ class Search extends Component {
                 location.city.search(reExp) !== -1
               )
                 .map(list =>
-                  <li key={list.label}>
 
-                    {list.name} {this.state.isGeoSorted && list.miles}
+                      <Row key={list.label}>
+                        <Col lg={6}>
+                          <h4>{list.name}</h4>
+                          <p>{list.address}</p>
+                          <p>{list.city} {list.state} {list.zip} </p>
+                          <a href="tel: + {list.phone}"> T. {list.phone}</a>
+                          <p>{list.hours1}</p>
+                          <p>{list.hours2}</p>
+                          <p>{list.hours3}</p>
+                          {list.miles && <p>Distance: {list.miles} miles</p>}
+                        </Col>
+                      </Row>
 
-                  </li>)}
-          </ul>
-        </article>
 
-      </div>
+                  )}
+
+
+      </Grid>
     )
   }
 
@@ -80,7 +89,6 @@ class Search extends Component {
       units: 'imperial',
     }, (err, res) => {
       if (res) {
-        console.log(res.json.rows[0].elements)
         const distance = res.json.rows[0].elements
 
         // merging distance with locations array
