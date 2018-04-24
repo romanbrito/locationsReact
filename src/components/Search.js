@@ -29,9 +29,9 @@ class Search extends Component {
     const reExp = new RegExp(this.state.search, "i")
 
     return (
-      <div>
+      <div className="locations-list">
         <Col>
-          <div className="locations-list">
+          <div>
             <input
               type="search"
               className="input-search"
