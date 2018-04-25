@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import data from '../json/locations'
 import apiKey from '../apiKey.json'
 import './Search.css'
-import {Col, Row} from 'react-bootstrap'
+import {Grid, Col, Row, ButtonToolbar, Button} from 'react-bootstrap'
 
 const googleMapsClient = require('@google/maps').createClient({
   key: apiKey.googleMapsApi
@@ -30,22 +30,22 @@ class Search extends Component {
 
     return (
 
-        <Col lg={6}>
-          <Row>
-            <input
-              type="search"
-              className="input-search"
-              name="search"
-              id="search"
-              placeholder="Name, City, State"
-              value={this.state.search}
-              onChange={(e) => this.setState({search: e.target.value})}
-            />
-          </Row>
+      <Col lg={6}>
+        <Row>
+          <input
+            type="search"
+            className="input-search"
+            name="search"
+            id="search"
+            placeholder="Name, City, State"
+            value={this.state.search}
+            onChange={(e) => this.setState({search: e.target.value})}
+          />
+        </Row>
 
-          {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
+        {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
 
-          <div className="locations-list">
+        <ul className="locations-list">
           {
             this.state.locations.filter(location =>
               location.name.search(reExp) !== -1 ||
@@ -56,19 +56,45 @@ class Search extends Component {
             )
               .map(list =>
 
-                <div key={list.label}>
-                  <h4>{list.name}</h4>
-                  <p>{list.address}</p>
-                  <p>{list.city} {list.state} {list.zip} </p>
-                  <a href="tel: + {list.phone}"> T. {list.phone}</a>
-                  <p>{list.hours1}</p>
-                  <p>{list.hours2}</p>
-                  <p>{list.hours3}</p>
-                  {list.miles && <p>Distance: {list.miles} miles</p>}
-                </div>
+                <li key={list.label}>
+                  <Grid fluid>
+                    <Col lg={6}>
+                      <h4>{list.name}</h4>
+                      <p>{list.address}</p>
+                      <p>{list.city} {list.state} {list.zip} </p>
+                      <a href="tel: + {list.phone}"> T. {list.phone}</a>
+                      <p>{list.hours1}</p>
+                      <p>{list.hours2}</p>
+                      <p>{list.hours3}</p>
+                      {list.miles && <p>Distance: {list.miles} miles</p>}
+                    </Col>
+                    <Col lg={6}>
+                      <Row>
+                        <ButtonToolbar>
+                          <Button
+                            onClick={e => console.log('menu')}>
+                            Menu
+                          </Button>
+                          <Button
+                            onClick={e => console.log('catering menu')}>
+                            Catering Menu
+                          </Button>
+                        </ButtonToolbar>
+                      </Row>
+                      <Row>
+                        <ButtonToolbar>
+                          <Button
+                            onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + list.coordinates.lat + ',' + list.coordinates.lng, '_blank')}>
+                            Directions
+                          </Button>
+                        </ButtonToolbar>
+                      </Row>
+                    </Col>
+                  </Grid>
+                </li>
               )}
-          </div>
-        </Col>
+        </ul>
+      </Col>
 
     )
   }
