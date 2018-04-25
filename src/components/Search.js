@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import data from '../json/locations'
 import apiKey from '../apiKey.json'
 import './Search.css'
-import {Col} from 'react-bootstrap'
+import {Col, Row} from 'react-bootstrap'
 
 const googleMapsClient = require('@google/maps').createClient({
   key: apiKey.googleMapsApi
@@ -29,9 +29,9 @@ class Search extends Component {
     const reExp = new RegExp(this.state.search, "i")
 
     return (
-      <div className="locations-list">
-        <Col>
-          <div>
+
+        <Col lg={6}>
+          <Row>
             <input
               type="search"
               className="input-search"
@@ -41,10 +41,11 @@ class Search extends Component {
               value={this.state.search}
               onChange={(e) => this.setState({search: e.target.value})}
             />
-          </div>
+          </Row>
 
           {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
 
+          <div className="locations-list">
           {
             this.state.locations.filter(location =>
               location.name.search(reExp) !== -1 ||
@@ -66,10 +67,9 @@ class Search extends Component {
                   {list.miles && <p>Distance: {list.miles} miles</p>}
                 </div>
               )}
+          </div>
         </Col>
 
-
-      </div>
     )
   }
 

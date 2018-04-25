@@ -12,7 +12,7 @@ const MapComponent = compose(
   withProps({
     googleMapURL: googleMapURL,
     loadingElement: <div style={{height: `100%`}}/>,
-    containerElement: <div style={{height: `400px`}}/>,
+    containerElement: <div style={{height: `60vh`}}/>,
     mapElement: <div style={{height: `100%`}}/>,
   }),
   withHandlers({
