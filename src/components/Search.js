@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import data from '../json/locations'
 import apiKey from '../apiKey.json'
 import './Search.css'
-import {Grid, Col, Row, ButtonToolbar, Button} from 'react-bootstrap'
+import {Grid, Col, Row} from 'react-bootstrap'
+import Menus from './Menus'
 
 const googleMapsClient = require('@google/maps').createClient({
   key: apiKey.googleMapsApi
@@ -68,28 +69,10 @@ class Search extends Component {
                       <p>{list.hours3}</p>
                       {list.miles && <p>Distance: {list.miles} miles</p>}
                     </Col>
-                    <Col lg={6}>
-                      <Row>
-                        <ButtonToolbar>
-                          <Button
-                            onClick={e => console.log('menu')}>
-                            Menu
-                          </Button>
-                          <Button
-                            onClick={e => console.log('catering menu')}>
-                            Catering Menu
-                          </Button>
-                        </ButtonToolbar>
-                      </Row>
-                      <Row>
-                        <ButtonToolbar>
-                          <Button
-                            onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + list.coordinates.lat + ',' + list.coordinates.lng, '_blank')}>
-                            Directions
-                          </Button>
-                        </ButtonToolbar>
-                      </Row>
-                    </Col>
+
+                    <Menus
+                    list={list}/>
+
                   </Grid>
                 </li>
               )}
