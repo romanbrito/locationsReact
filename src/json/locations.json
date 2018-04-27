@@ -1,6 +1,7 @@
 {
   "locations": [
     {
+      "id": "lakeline",
       "name": "Lakeline",
       "address": "14010 US-183 #500",
       "city": "Austin",
@@ -20,6 +21,7 @@
       "cateringMenuUrl": ["Catering_LL"]
     },
     {
+      "id": "sunset",
       "name": "Sunset Valley",
       "address": "5400 Brodie Ln #230",
       "city": "Sunset Valley",
@@ -39,7 +41,8 @@
       "cateringMenuUrl": ["Catering_SS"]
     },
     {
-      "name": "Frisco_Warren Pkwy",
+      "id": "frisco-warren-pkwy",
+      "name": "Frisco Warren Pkwy",
       "address": "6801 Warren Pkwy #125",
       "city": "Frisco",
       "state": "TX",
@@ -58,6 +61,7 @@
       "cateringMenuUrl": ["Catering_FR"]
     },
     {
+      "id": "las-colinas",
       "name": "Las Colinas",
       "address": "7601 N MacArthur Blvd # 105",
       "city": "Irving",
@@ -77,6 +81,7 @@
       "cateringMenuUrl": ["Catering_CO"]
     },
     {
+      "id": "old-town",
       "name":  "Old Town",
       "address": "5500 Greenville Ave #600",
       "city": "Dallas",
@@ -96,6 +101,7 @@
       "cateringMenuUrl": ["Catering_OT"]
     },
     {
+      "id": "plano",
       "name": "Plano",
       "address": "5813 Preston Rd #574",
       "city": "Plano",
@@ -115,6 +121,7 @@
       "cateringMenuUrl": ["Catering_PL"]
     },
     {
+      "id": "richardson",
       "name": "Richardson",
       "address": "100 S Central Expy #44",
       "city": "Richardson",
@@ -134,6 +141,7 @@
       "cateringMenuUrl": ["Catering_RI"]
     },
     {
+      "id": "arlington-uta-campus",
       "name": "Arlington/UTA Campus",
       "address": "445 Spaniolo Dr",
       "city": "Arlington",
@@ -153,6 +161,7 @@
       "cateringMenuUrl": ["Catering_UTA"]
     },
     {
+      "id": "okc",
       "name": "OKC",
       "address": "200 S Oklahoma Ave #110",
       "city": "Oklahoma City",
@@ -172,6 +181,7 @@
       "cateringMenuUrl": ["Catering_BR-1", "Catering_BR-2"]
     },
     {
+      "id": "laredo",
       "name": "Laredo",
       "address": "1408 E Del Mar Blvd #4B",
       "city": "Laredo",
@@ -191,6 +201,7 @@
       "cateringMenuUrl": ["Catering_LR"]
     },
     {
+      "id": "mcallen",
       "name": "McAllen",
       "address": "1400 E Expy 83 #160",
       "city": "McAllen",
@@ -210,7 +221,8 @@
       "cateringMenuUrl": ["Catering_MC"]
     },
     {
-      "name": "Houston_Westheimer",
+      "id": "houston-westheimer",
+      "name": "Houston Westheimer",
       "address": "8383 WESTHEIMER RD",
       "city": "Houston",
       "state": "TX",
@@ -228,7 +240,8 @@
       "houseMenuUrl": ["House_WE"],
       "cateringMenuUrl": ["Catering_WE"]
     },
-          {
+    {
+      "id": "denton",
       "name": "Denton",
       "address": "1120 West Hickory",
       "city": "Denton",
