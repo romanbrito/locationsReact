@@ -2,9 +2,122 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9dd7140-9006-4b6d-b711-10ef883881da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Menus.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/1024x768BaconCheddar.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/1024x768Catering.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/1024x768Founders.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/1024x768SouthPhilly.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x370BaconCheddar.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x370Catering.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x370Founders.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x370SouthPhilly.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x450BaconCheddar.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x450Catering.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x450Founders.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/414x450SouthPhilly.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/768x768BaconCheddar.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/768x768Catering.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/768x768Founders.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/768x768SouthPhilly.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/AppleStore.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Capitol_A.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_BR-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_BR-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_CO.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_DN.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_FR.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_GH.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_LL.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_LR.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_MC.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_OT.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_PL.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_RI.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_SS.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_UTA.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Catering_WE.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/GooglePlay.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_BR-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_BR-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_CO.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_DN.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_FR.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_GH.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_LL.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_LR.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_MC.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_OT.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_PL.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_RI.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_SS-1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_SS-2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_SS.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_UTA.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/House_WE.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/InstagramIcon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/IphoneApp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/LightWood11x17.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/Logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/TexNation.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/TexStarTrans.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/about.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/aboutBurger.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/aboutCheese.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/aboutCs.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/aboutFries.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/aboutNachos.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/bar-queso.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/become.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/bottomPic.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/brownLayer.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/brownLayer.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/brownLayer8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/burger.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/capitol.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/catering.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/catering_tray.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/deli_tray.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/favicon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/founder.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/franchising.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/moneyversed.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/newsDown.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/newsUp.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/ourStory.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/queso_cut.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/redBar.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/south.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/thrillist.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_BR.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_CO.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_DN.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_FR.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_GH.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_LL.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_LR.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_MC.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_OT.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_PL.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_RI.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_SS.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_UTA.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/Catering_WE.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_BR.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_CO.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_DN.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_FR.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_GH.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_LL.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_LR.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_MC.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_OT.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_PL.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_RI.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_SS.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_UTA.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/pdf/House_WE.pdf" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search.js" afterPath="$PROJECT_DIR$/src/components/Search.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menus.js" afterPath="$PROJECT_DIR$/src/components/Menus.js" />
+      <change beforePath="$PROJECT_DIR$/src/images/mm_20_red.png" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +136,8 @@
           <file leaf-file-name="Menus.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/Menus.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+                <state relative-caret-position="507">
+                  <caret line="56" column="124" lean-forward="false" selection-start-line="56" selection-start-column="124" selection-end-line="56" selection-end-column="124" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -90,7 +203,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Search.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Search.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/Search.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="179">
@@ -102,11 +215,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="locations.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="locations.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/json/locations.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="273">
-                  <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+                  <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -145,13 +258,14 @@
       <find>_handleCloseMenu</find>
       <find>_handleClose</find>
       <find>_handleShow</find>
+      <find>Menu</find>
     </findStrings>
     <replaceStrings>
-      <replace>props.list</replace>
       <replace>_handleShow</replace>
       <replace>_handleClose</replace>
       <replace>_handleCloseMenu</replace>
       <replace>_handleShowMenu</replace>
+      <replace>props.list</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -231,12 +345,6 @@
               <item name="locations" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="locations" type="b2602c69:ProjectViewProjectNode" />
-              <item name="locations" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -253,6 +361,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roman\workspace\locations\public" />
       <recent name="C:\Users\Roman\workspace\locations\src\json" />
       <recent name="C:\Users\Roman\workspace\locations\src" />
       <recent name="C:\Users\Roman\workspace\locations" />
@@ -299,7 +408,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84255000" />
+    <option name="totallyTimeSpent" value="86606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -340,7 +449,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/google-map-react/lib/google_map_markers.js" />
     <entry file="file://$PROJECT_DIR$/src/GoogleApiComponent.js" />
     <entry file="file://$PROJECT_DIR$/src/json/locations.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -623,14 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/json/locations.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -641,10 +741,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/mm_20_red.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/json/locations.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Menus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+        <state relative-caret-position="507">
+          <caret line="56" column="124" lean-forward="false" selection-start-line="56" selection-start-column="124" selection-end-line="56" selection-end-column="124" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

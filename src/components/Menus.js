@@ -38,9 +38,9 @@ class Menus extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>House Menu</h4>
-              <p>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </p>
+
+              {this.props.list.houseMenuUrl.map(menuPic => <img src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this._handleCloseMenu}>Close</Button>
@@ -53,9 +53,9 @@ class Menus extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>Catering Menu</h4>
-              <p>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </p>
+
+              {this.props.list.cateringMenuUrl.map(menuPic => <img src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this._handleCloseCatering}>Close</Button>
@@ -70,19 +70,19 @@ class Menus extends Component {
   }
 
   _handleCloseMenu = () => {
-    this.setState({ showMenu: false });
+    this.setState({showMenu: false});
   }
 
   _handleShowMenu = () => {
-    this.setState({ showMenu: true });
+    this.setState({showMenu: true});
   }
 
   _handleCloseCatering = () => {
-    this.setState({ showCatering: false });
+    this.setState({showCatering: false});
   }
 
   _handleShowCatering = () => {
-    this.setState({ showCatering: true });
+    this.setState({showCatering: true});
   }
 }
 
