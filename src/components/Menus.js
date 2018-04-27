@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Modal, Button, Col, Row, ButtonToolbar} from 'react-bootstrap'
+import './Menus.css'
 
 class Menus extends Component {
   state = {
@@ -39,7 +40,9 @@ class Menus extends Component {
             <Modal.Body>
               <h4>House Menu</h4>
 
+              <div className="smaller-screen-locations">
               {this.props.list.houseMenuUrl.map(menuPic => <img src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+              </div>
 
             </Modal.Body>
             <Modal.Footer>
@@ -54,7 +57,9 @@ class Menus extends Component {
             <Modal.Body>
               <h4>Catering Menu</h4>
 
+              <div className="smaller-screen-locations">
               {this.props.list.cateringMenuUrl.map(menuPic => <img src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+              </div>
 
             </Modal.Body>
             <Modal.Footer>
