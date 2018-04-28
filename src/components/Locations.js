@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Grid, Row} from 'react-bootstrap'
-import Search from './components/Search'
-import Map from './components/Map'
+import Search from './Search'
+import Map from './Map'
 
-class App extends Component {
+class Locations extends Component {
 
   render() {
 
@@ -11,8 +11,8 @@ class App extends Component {
       <div className="App">
         <Grid fluid>
           <Row>
-          <Map/>
-          <Search/>
+            <Map/>
+            <Search/>
           </Row>
         </Grid>
       </div>
@@ -20,4 +20,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Locations
