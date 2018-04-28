@@ -38,7 +38,10 @@ class Menus extends Component {
             </Button>
           </ButtonToolbar>
 
-          <Modal show={this.state.showMenu} onHide={this._handleCloseMenu}>
+          <Modal
+            show={this.state.showMenu}
+            onHide={this._handleCloseMenu}
+            dialogClassName="custom-modal">
             <Modal.Header closeButton>
               <Modal.Title>{this.props.list.name}</Modal.Title>
             </Modal.Header>
@@ -55,7 +58,10 @@ class Menus extends Component {
                   onLoadSuccess={this._onDocumentLoad} file={'pdf/House_' + this.props.list.label + '.pdf'}
                   onClick={this._turnPdfPage}
                 >
-                  <Page pageNumber={pageNumber}/>
+                  <Page
+                    pageNumber={pageNumber}
+                    className="pdf-menu"
+                    width={window.innerWidth*.85}/>
                 </Document>
                 <p>Page {pageNumber} of {numPages}</p>
               </div>
@@ -75,7 +81,8 @@ class Menus extends Component {
               <h4>Catering Menu</h4>
 
               <div className="smaller-screen-locations">
-                {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic} src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+                {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic} src={'images/' + menuPic + '.jpg'}
+                                                                     alt="menu" width="100%"/>)}
               </div>
 
               <div className="large-screen-locations">

@@ -1,3 +1,7 @@
+.custom-modal {
+    width: 88%;
+}
+
 .large-screen-locations, .smaller-screen-locations {
     display: none;
 }
@@ -14,6 +18,9 @@
 
     .large-screen-locations {
         display: block;
-        width: 100%;
     }
+}
+
+.pdf-menu {
+
 }
