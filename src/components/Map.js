@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Col} from 'react-bootstrap'
 import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
@@ -67,16 +67,13 @@ const MapComponent = compose(
   </GoogleMap>
 ))
 
-class Map extends Component {
+const Map = () => {
 
-  render() {
-
-    return (
-      <Col lg={6}>
-        <MapComponent/>
-      </Col>
-    )
-  }
+  return (
+    <Col lg={6}>
+      <MapComponent/>
+    </Col>
+  )
 
 }
 

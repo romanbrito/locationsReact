@@ -26,6 +26,7 @@ class Search extends Component {
   }
 
   render() {
+
     const locations = data.locations
     const reExp = new RegExp(this.state.search, "i")
 
