@@ -52,7 +52,7 @@ class Menus extends Component {
 
                   <Document
                     onLoadSuccess={this._onDocumentLoad} file={'pdf/House_' + this.props.list.label + '.pdf'}
-                    onClick={e => console.log('you clicked')}
+                    onClick={this._turnPdfPage}
                   >
                   <Page pageNumber={pageNumber} />
                   </Document>
@@ -110,6 +110,18 @@ class Menus extends Component {
   _onDocumentLoad = ({ numPages }) => {
     this.setState({ numPages });
   }
+
+  _turnPdfPage = () => {
+    const { pageNumber, numPages } = this.state
+
+    let currPage = pageNumber
+    if (currPage < numPages) {
+      this.setState({pageNumber: currPage+1 })
+    } else {
+      this.setState({pageNumber: 1})
+    }
+  }
+
 }
 
 export default Menus
