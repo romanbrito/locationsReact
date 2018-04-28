@@ -3,7 +3,6 @@ import {Col} from 'react-bootstrap'
 import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
-import data from '../json/locations.json'
 import apiKey from '../apiKey.json'
 
 const googleMapURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey.googleMapsApi + '&v=3.exp&libraries=geometry,drawing,places'
@@ -24,6 +23,8 @@ const MapComponent = compose(
   }),
   lifecycle({
     componentWillMount() {
+      const {data} = this.props
+
       this.setState({
         zoomToMarkers: map => {
           const bounds = new window.google.maps.LatLngBounds()
@@ -54,7 +55,7 @@ const MapComponent = compose(
       gridSize={15}
     >
 
-      {data.locations.map(marker => (
+      {props.data.locations.map(marker => (
         <Marker
           key={marker.label}
           position={marker.coordinates}
@@ -67,11 +68,11 @@ const MapComponent = compose(
   </GoogleMap>
 ))
 
-const Map = () => {
+const Map = (props) => {
 
   return (
     <Col lg={6}>
-      <MapComponent/>
+      <MapComponent data={props.data}/>
     </Col>
   )
 
