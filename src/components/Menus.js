@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Modal, Button, Col, Row, ButtonToolbar} from 'react-bootstrap'
-import { Document, Page } from 'react-pdf/dist/entry.webpack'
+import {Document, Page} from 'react-pdf/dist/entry.webpack'
 import './Menus.css'
 
 class Menus extends Component {
@@ -13,7 +13,7 @@ class Menus extends Component {
 
   render() {
 
-    const { pageNumber, numPages } = this.state
+    const {pageNumber, numPages} = this.state
 
     return (
 
@@ -46,19 +46,19 @@ class Menus extends Component {
               <h4>House Menu</h4>
 
               <div className="smaller-screen-locations">
-              {this.props.list.houseMenuUrl.map(menuPic =>
-                <img key={menuPic} src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+                {this.props.list.houseMenuUrl.map(menuPic =>
+                  <img key={menuPic} src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
               </div>
 
-                  <Document
-                    onLoadSuccess={this._onDocumentLoad} file={'pdf/House_' + this.props.list.label + '.pdf'}
-                    onClick={this._turnPdfPage}
-                  >
-                  <Page pageNumber={pageNumber} />
-                  </Document>
-              <p>Page {pageNumber} of {numPages}</p>
-
-
+              <div className="large-screen-locations">
+                <Document
+                  onLoadSuccess={this._onDocumentLoad} file={'pdf/House_' + this.props.list.label + '.pdf'}
+                  onClick={this._turnPdfPage}
+                >
+                  <Page pageNumber={pageNumber}/>
+                </Document>
+                <p>Page {pageNumber} of {numPages}</p>
+              </div>
 
 
             </Modal.Body>
@@ -75,7 +75,17 @@ class Menus extends Component {
               <h4>Catering Menu</h4>
 
               <div className="smaller-screen-locations">
-              {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic} src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+                {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic} src={'images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
+              </div>
+
+              <div className="large-screen-locations">
+                <Document
+                  onLoadSuccess={this._onDocumentLoad} file={'pdf/Catering_' + this.props.list.label + '.pdf'}
+                  onClick={this._turnPdfPage}
+                >
+                  <Page pageNumber={pageNumber}/>
+                </Document>
+                <p>Page {pageNumber} of {numPages}</p>
               </div>
 
             </Modal.Body>
@@ -107,16 +117,16 @@ class Menus extends Component {
     this.setState({showCatering: true});
   }
 
-  _onDocumentLoad = ({ numPages }) => {
-    this.setState({ numPages });
+  _onDocumentLoad = ({numPages}) => {
+    this.setState({numPages});
   }
 
   _turnPdfPage = () => {
-    const { pageNumber, numPages } = this.state
+    const {pageNumber, numPages} = this.state
 
     let currPage = pageNumber
     if (currPage < numPages) {
-      this.setState({pageNumber: currPage+1 })
+      this.setState({pageNumber: currPage + 1})
     } else {
       this.setState({pageNumber: 1})
     }

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9dd7140-9006-4b6d-b711-10ef883881da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menus.css" afterPath="$PROJECT_DIR$/src/components/Menus.css" />
       <change beforePath="$PROJECT_DIR$/src/components/Menus.js" afterPath="$PROJECT_DIR$/src/components/Menus.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +23,8 @@
           <file leaf-file-name="Menus.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/Menus.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="468">
-                  <caret line="122" column="2" lean-forward="true" selection-start-line="122" selection-start-column="2" selection-end-line="122" selection-end-column="2" />
+                <state relative-caret-position="402">
+                  <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
@@ -33,7 +35,7 @@
           <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="192">
+                <state relative-caret-position="168">
                   <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
@@ -77,8 +79,8 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="Search.js" pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file leaf-file-name="Search.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/Search.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="179">
@@ -93,18 +95,18 @@
           <file leaf-file-name="locations.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/json/locations.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="507">
+                <state relative-caret-position="525">
                   <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Menus.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Menus.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/Menus.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="84">
-                  <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+                <state relative-caret-position="336">
+                  <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -176,8 +178,8 @@
         <option value="$PROJECT_DIR$/src/components/Map.js" />
         <option value="$PROJECT_DIR$/src/components/Search.css" />
         <option value="$PROJECT_DIR$/src/components/Search.js" />
-        <option value="$PROJECT_DIR$/src/components/Menus.css" />
         <option value="$PROJECT_DIR$/src/components/Menus.js" />
+        <option value="$PROJECT_DIR$/src/components/Menus.css" />
       </list>
     </option>
   </component>
@@ -214,7 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,19 +232,13 @@
             <path>
               <item name="locations" type="b2602c69:ProjectViewProjectNode" />
               <item name="locations" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="pdf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="locations" type="b2602c69:ProjectViewProjectNode" />
-              <item name="locations" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,11 +293,12 @@
       <workItem from="1524325289534" duration="630000" />
       <workItem from="1524511680632" duration="12955000" />
       <workItem from="1524579642160" duration="7142000" />
+      <workItem from="1524921606770" duration="450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94178000" />
+    <option name="totallyTimeSpent" value="94967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -616,7 +613,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="168">
           <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -624,17 +621,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Menus.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/json/locations.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
+        <state relative-caret-position="525">
           <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding />
         </state>
@@ -652,11 +641,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Menus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="122" column="2" lean-forward="true" selection-start-line="122" selection-start-column="2" selection-end-line="122" selection-end-column="2" />
+        <state relative-caret-position="402">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Menus.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

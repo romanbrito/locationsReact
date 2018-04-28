@@ -14,5 +14,6 @@
 
     .large-screen-locations {
         display: block;
+        width: 100%;
     }
 }
