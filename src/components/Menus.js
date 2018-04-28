@@ -73,7 +73,10 @@ class Menus extends Component {
             </Modal.Footer>
           </Modal>
 
-          <Modal show={this.state.showCatering} onHide={this._handleCloseCatering}>
+          <Modal
+            show={this.state.showCatering}
+            onHide={this._handleCloseCatering}
+            dialogClassName="custom-modal">
             <Modal.Header closeButton>
               <Modal.Title>{this.props.list.name}</Modal.Title>
             </Modal.Header>
@@ -90,7 +93,10 @@ class Menus extends Component {
                   onLoadSuccess={this._onDocumentLoad} file={'pdf/Catering_' + this.props.list.label + '.pdf'}
                   onClick={this._turnPdfPage}
                 >
-                  <Page pageNumber={pageNumber}/>
+                  <Page
+                    pageNumber={pageNumber}
+                    className="pdf-menu"
+                    width={window.innerWidth*.85}/>
                 </Document>
                 <p>Page {pageNumber} of {numPages}</p>
               </div>
@@ -109,19 +115,21 @@ class Menus extends Component {
   }
 
   _handleCloseMenu = () => {
-    this.setState({showMenu: false});
+    this.setState({showMenu: false})
+    this.setState({pageNumber: 1})
   }
 
   _handleShowMenu = () => {
-    this.setState({showMenu: true});
+    this.setState({showMenu: true})
   }
 
   _handleCloseCatering = () => {
-    this.setState({showCatering: false});
+    this.setState({showCatering: false})
+    this.setState({pageNumber: 1})
   }
 
   _handleShowCatering = () => {
-    this.setState({showCatering: true});
+    this.setState({showCatering: true})
   }
 
   _onDocumentLoad = ({numPages}) => {
