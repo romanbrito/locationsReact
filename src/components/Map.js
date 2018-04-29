@@ -29,8 +29,8 @@ const MapComponent = compose(
         zoomToMarkers: map => {
           const bounds = new window.google.maps.LatLngBounds()
 
-          for (let i = 0; i < data.locations.length; i++) {
-            const loc = new window.google.maps.LatLng(data.locations[i].coordinates)
+          for (let i = 0; i < data.length; i++) {
+            const loc = new window.google.maps.LatLng(data[i].coordinates)
             bounds.extend(loc)
           }
 
@@ -55,7 +55,7 @@ const MapComponent = compose(
       gridSize={15}
     >
 
-      {props.data.locations.map(marker => (
+      {props.data.map(marker => (
         <Marker
           key={marker.label}
           position={marker.coordinates}

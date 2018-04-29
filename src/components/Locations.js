@@ -14,7 +14,7 @@ class Locations extends Component {
       <div className="App">
         <Grid fluid>
           <Row>
-            <Map data={data}/>
+            <Map data={data.locations}/>
             <Search data={data}/>
           </Row>
         </Grid>
