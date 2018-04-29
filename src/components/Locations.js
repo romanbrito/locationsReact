@@ -4,6 +4,15 @@ import data from '../json/locations.json'
 import Search from './Search'
 import Map from './Map'
 
+const arrayToObject  = (array) => {
+
+  return array.reduce( (obj, item) => {
+    obj[item.id] = item
+    return obj
+  }, {})
+
+}
+
 class Locations extends Component {
 
   render() {
@@ -15,7 +24,7 @@ class Locations extends Component {
         <Grid fluid>
           <Row>
             <Map data={data.locations}/>
-            <Search data={data}/>
+            <Search data={data.locations}/>
           </Row>
         </Grid>
       </div>

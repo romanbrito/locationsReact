@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import data from '../json/locations'
 import apiKey from '../apiKey.json'
 import './Search.css'
 import {Grid, Col, Row} from 'react-bootstrap'
@@ -13,7 +12,7 @@ class Search extends Component {
   state = {
     search: '',
     currentPosition: null,
-    locations: data.locations,
+    locations: this.props.data,
     isGeoSorted: false
   }
 
@@ -27,7 +26,7 @@ class Search extends Component {
 
   render() {
 
-    const locations = data.locations
+    const locations = this.props.data
     const reExp = new RegExp(this.state.search, "i")
 
     return (
