@@ -15,13 +15,9 @@ const arrayToObject  = (array) => {
 
 const dataObj = arrayToObject(data.locations)
 
-console.log(dataObj)
-
 class Locations extends Component {
 
   render() {
-
-    console.log(this.props.match.params.location)
 
     const loc = this.props.match.params.location
 
@@ -29,8 +25,8 @@ class Locations extends Component {
       <div className="App">
         <Grid fluid>
           <Row>
-            <Map data={loc ? [dataObj[loc]] : data.locations}/>
-            <Search data={loc ? [dataObj[loc]] : data.locations}/>
+            <Map data={dataObj[loc] ? [dataObj[loc]] : data.locations}/>
+            <Search data={dataObj[loc] ? [dataObj[loc]] : data.locations}/>
           </Row>
         </Grid>
       </div>
