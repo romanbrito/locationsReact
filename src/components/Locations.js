@@ -13,6 +13,10 @@ const arrayToObject  = (array) => {
 
 }
 
+const dataObj = arrayToObject(data.locations)
+
+console.log(dataObj)
+
 class Locations extends Component {
 
   render() {
