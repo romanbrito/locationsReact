@@ -23,12 +23,14 @@ class Locations extends Component {
 
     console.log(this.props.match.params.location)
 
+    const loc = this.props.match.params.location
+
     return (
       <div className="App">
         <Grid fluid>
           <Row>
-            <Map data={data.locations}/>
-            <Search data={data.locations}/>
+            <Map data={loc ? [dataObj[loc]] : data.locations}/>
+            <Search data={loc ? [dataObj[loc]] : data.locations}/>
           </Row>
         </Grid>
       </div>
