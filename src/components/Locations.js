@@ -18,7 +18,7 @@ const dataObj = arrayToObject(data.locations)
 class Locations extends Component {
 
   render() {
-
+    // should work too if url is locations-menu
     const loc = this.props.match.params.location
 
     return (
