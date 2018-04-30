@@ -42,31 +42,46 @@ const MapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(props => (
-  <GoogleMap
-    ref={props.zoomToMarkers}
-    defaultZoom={8}
-    defaultCenter={{lat: -34.397, lng: 150.644}}>
+)(props => {
+    if (props.data.length > 1) {
 
-    <MarkerClusterer
-      onClick={props.onMarkerClustererClick}
-      averageCenter
-      enableRetinaIcons
-      gridSize={15}
-    >
+      return (<GoogleMap
+          ref={props.zoomToMarkers}
+          defaultZoom={8}
+          defaultCenter={{lat: -34.397, lng: 150.644}}>
+          <MarkerClusterer
+            onClick={props.onMarkerClustererClick}
+            averageCenter
+            enableRetinaIcons
+            gridSize={15}
+          >
+            {props.data.map(marker => (
+              <Marker
+                key={marker.label}
+                position={marker.coordinates}
+                label={marker.label}
+                onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
+              />
+            ))}
+          </MarkerClusterer>
+        </GoogleMap>
+      )
 
-      {props.data.map(marker => (
-        <Marker
-          key={marker.label}
-          position={marker.coordinates}
-          label={marker.label}
-          onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
-        />
-      ))}
-    </MarkerClusterer>
+    } else {
 
-  </GoogleMap>
-))
+      return (<GoogleMap
+          defaultZoom={13}
+          defaultCenter={props.data[0].coordinates}>
+          <Marker
+            position={props.data[0].coordinates}
+            label={props.data[0].label}
+            onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + props.data[0].coordinates.lat + ',' + props.data[0].coordinates.lng, '_blank')}
+          />
+        </GoogleMap>
+      )
+    }
+  }
+)
 
 const Map = (props) => {
 
@@ -75,7 +90,6 @@ const Map = (props) => {
       <MapComponent data={props.data}/>
     </Col>
   )
-
 }
 
 export default Map
