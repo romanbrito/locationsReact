@@ -31,13 +31,21 @@
 
 .menu-button-directions {
     background: #c80000;
+    text-shadow: none;
+    color: #ffffff;
 }
 
 .menu-button {
     background: #ffffff;
+    color: #c80000;
+    border: solid #c80000 1px;
 }
 
 
 .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group {
      margin-left: 0;
+}
+
+.menu {
+    padding: 0;
 }

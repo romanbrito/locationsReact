@@ -20,14 +20,14 @@ class Menus extends Component {
       <Col lg={6}>
         <Row>
           <ButtonToolbar>
-            <Col lg={6} md={6} sm={6} xs={6}>
+            <Col lg={6} md={6} sm={6} xs={6} className="menu">
               <Button
                 className="menu-button"
                 onClick={this._handleShowMenu}>
                 Menu
               </Button>
             </Col>
-            <Col lg={6} md={6} sm={6} xs={6}>
+            <Col lg={6} md={6} sm={6} xs={6} className="menu">
               <Button
                 className="menu-button"
                 onClick={this._handleShowCatering}>
