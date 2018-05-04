@@ -20,19 +20,26 @@ class Menus extends Component {
       <Col lg={6}>
         <Row>
           <ButtonToolbar>
-            <Button
-              onClick={this._handleShowMenu}>
-              Menu
-            </Button>
-            <Button
-              onClick={this._handleShowCatering}>
-              Catering Menu
-            </Button>
+            <Col lg={6} md={6} sm={6} xs={6}>
+              <Button
+                className="menu-button"
+                onClick={this._handleShowMenu}>
+                Menu
+              </Button>
+            </Col>
+            <Col lg={6} md={6} sm={6} xs={6}>
+              <Button
+                className="menu-button"
+                onClick={this._handleShowCatering}>
+                Catering Menu
+              </Button>
+            </Col>
           </ButtonToolbar>
         </Row>
         <Row>
           <ButtonToolbar>
             <Button
+              className="menu-button"
               onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + this.props.list.coordinates.lat + ',' + this.props.list.coordinates.lng, '_blank')}>
               Directions
             </Button>
@@ -61,7 +68,7 @@ class Menus extends Component {
                   <Page
                     pageNumber={pageNumber}
                     className="pdf-menu"
-                    width={window.innerWidth*.85}/>
+                    width={window.innerWidth * .85}/>
                 </Document>
                 <p>Page {pageNumber} of {numPages}</p>
               </div>
@@ -96,7 +103,7 @@ class Menus extends Component {
                   <Page
                     pageNumber={pageNumber}
                     className="pdf-menu"
-                    width={window.innerWidth*.85}/>
+                    width={window.innerWidth * .85}/>
                 </Document>
                 <p>Page {pageNumber} of {numPages}</p>
               </div>
