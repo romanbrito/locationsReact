@@ -25,6 +25,19 @@
 
 }
 
-.menu-button {
+.menu-button, .menu-button-directions {
     width: 100%;
+}
+
+.menu-button-directions {
+    background: #c80000;
+}
+
+.menu-button {
+    background: #ffffff;
+}
+
+
+.btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group {
+     margin-left: 0;
 }

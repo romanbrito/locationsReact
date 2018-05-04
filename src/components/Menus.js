@@ -39,11 +39,12 @@ class Menus extends Component {
         <Row>
           <ButtonToolbar>
             <Button
-              className="menu-button"
+              className="menu-button-directions"
               onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + this.props.list.coordinates.lat + ',' + this.props.list.coordinates.lng, '_blank')}>
               Directions
             </Button>
           </ButtonToolbar>
+        </Row>
 
           <Modal
             show={this.state.showMenu}
@@ -114,7 +115,6 @@ class Menus extends Component {
             </Modal.Footer>
           </Modal>
 
-        </Row>
       </Col>
 
     )
