@@ -3,3 +3,10 @@
     overflow: auto;
     list-style: none;
 }
+
+.input-search {
+    border-radius: 7pt;
+    text-align: left;
+    width: 90%;
+    margin: 15px;
+}
