@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
 import {Modal, Button, Col, Row, ButtonToolbar} from 'react-bootstrap'
-import {Document, Page} from 'react-pdf/dist/entry.webpack'
 import './Menus.css'
 
-const next = {
-  cursor: 'pointer',
-}
 
 const pdfStyle = {
   width: '100%',
@@ -21,8 +17,6 @@ class Menus extends Component {
   }
 
   render() {
-
-    const {pageNumber, numPages} = this.state
 
     return (
 
@@ -64,7 +58,6 @@ class Menus extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>House Menu</h4>
-              {/*<p><span onClick={this._turnPdfPage} style={next}> &lt; </span> Page {pageNumber} of {numPages} <span onClick={this._turnPdfPage} style={next}> &gt; </span></p>*/}
 
               <div className="smaller-screen-locations">
                 {this.props.list.houseMenuUrl.map(menuPic =>
@@ -72,14 +65,7 @@ class Menus extends Component {
               </div>
 
               <div className="large-screen-locations">
-                {/*<Document*/}
-                  {/*onLoadSuccess={this._onDocumentLoad} file={'https://res.cloudinary.com/texadelphia/image/upload/v1526322543/House_' + this.props.list.label + '.pdf'}*/}
-                {/*>*/}
-                  {/*<Page*/}
-                    {/*pageNumber={pageNumber}*/}
-                    {/*className="pdf-menu"*/}
-                    {/*width={window.innerWidth * .85}/>*/}
-                {/*</Document>*/}
+
                 <object data={'https://res.cloudinary.com/texadelphia/image/upload/v1526322543/House_' + this.props.list.label + '.pdf'} type="application/pdf" style={pdfStyle}>
                   Your browser does not support objects
                 </object>
@@ -102,7 +88,6 @@ class Menus extends Component {
             </Modal.Header>
             <Modal.Body>
               <h4>Catering Menu</h4>
-              {/*<p><span onClick={this._turnPdfPage} style={next}> &lt; </span> Page {pageNumber} of {numPages} <span onClick={this._turnPdfPage} style={next}> &gt; </span></p>*/}
 
               <div className="smaller-screen-locations">
                 {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic} src={'../wp-content/themes/texsite/images/' + menuPic + '.jpg'}
@@ -110,14 +95,6 @@ class Menus extends Component {
               </div>
 
               <div className="large-screen-locations">
-                {/*<Document*/}
-                  {/*onLoadSuccess={this._onDocumentLoad} file={'https://res.cloudinary.com/texadelphia/image/upload/v1526322543/Catering_' + this.props.list.label + '.pdf'}*/}
-                {/*>*/}
-                  {/*<Page*/}
-                    {/*pageNumber={pageNumber}*/}
-                    {/*className="pdf-menu"*/}
-                    {/*width={window.innerWidth * .85}/>*/}
-                {/*</Document>*/}
 
                 <object data={'https://res.cloudinary.com/texadelphia/image/upload/v1526322543/Catering_' + this.props.list.label + '.pdf'} type="application/pdf" style={pdfStyle}>
                   Your browser does not support objects
