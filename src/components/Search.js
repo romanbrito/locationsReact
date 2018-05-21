@@ -33,7 +33,7 @@ class Search extends Component {
 
       <Col lg={6}>
         <Row>
-          <input
+          {locations.length > 1 ? <input
             type="search"
             className="input-search"
             name="search"
@@ -41,7 +41,9 @@ class Search extends Component {
             placeholder="Name, City, State"
             value={this.state.search}
             onChange={(e) => this.setState({search: e.target.value})}
-          />
+          /> : ''}
+
+
         </Row>
 
         {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
@@ -71,9 +73,10 @@ class Search extends Component {
                     </Col>
 
                     <Menus
-                    list={list}/>
+                      list={list}/>
 
                   </Grid>
+                  <hr/>
                 </li>
               )}
         </ul>

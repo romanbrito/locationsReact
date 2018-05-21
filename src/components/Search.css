@@ -2,6 +2,7 @@
     height: 60vh;
     overflow: auto;
     list-style: none;
+    padding: 0;
 }
 
 .input-search {

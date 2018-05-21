@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Modal, Button, Col, Row, ButtonToolbar} from 'react-bootstrap'
+import 'font-awesome/css/font-awesome.min.css'
 import './Menus.css'
 
 
@@ -49,63 +50,69 @@ class Menus extends Component {
           </ButtonToolbar>
         </Row>
 
-          <Modal
-            show={this.state.showMenu}
-            onHide={this._handleCloseMenu}
-            dialogClassName="custom-modal">
-            <Modal.Header closeButton>
-              <Modal.Title>{this.props.list.name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <h4>House Menu</h4>
+        <Modal
+          show={this.state.showMenu}
+          onHide={this._handleCloseMenu}
+          dialogClassName="custom-modal">
+          <Modal.Header closeButton>
+            <Modal.Title>{this.props.list.name} <a href={'../wp-content/themes/texsite/pdf/House_' + this.props.list.label + '.pdf'} target="_blank"><i className="fa fa-print" aria-hidden="true"/></a></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>House Menu</h4>
 
-              <div className="smaller-screen-locations">
-                {this.props.list.houseMenuUrl.map(menuPic =>
-                  <img key={menuPic} src={'../wp-content/themes/texsite/images/' + menuPic + '.jpg'} alt="menu" width="100%"/>)}
-              </div>
+            <div className="smaller-screen-locations">
+              {this.props.list.houseMenuUrl.map(menuPic =>
+                <img key={menuPic} src={'../wp-content/themes/texsite/images/' + menuPic + '.jpg'} alt="menu"
+                     width="100%"/>)}
+            </div>
 
-              <div className="large-screen-locations">
+            <div className="large-screen-locations">
 
-                <object data={'https://res.cloudinary.com/texadelphia/image/upload/v1526322543/House_' + this.props.list.label + '.pdf'} type="application/pdf" style={pdfStyle}>
-                  Your browser does not support objects
-                </object>
+              <object
+                data={'../wp-content/themes/texsite/pdf/House_' + this.props.list.label + '.pdf'}
+                type="application/pdf" style={pdfStyle}>
+                Your browser does not support objects
+              </object>
 
-              </div>
+            </div>
 
 
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this._handleCloseMenu}>Close</Button>
-            </Modal.Footer>
-          </Modal>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this._handleCloseMenu}>Close</Button>
+          </Modal.Footer>
+        </Modal>
 
-          <Modal
-            show={this.state.showCatering}
-            onHide={this._handleCloseCatering}
-            dialogClassName="custom-modal">
-            <Modal.Header closeButton>
-              <Modal.Title>{this.props.list.name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <h4>Catering Menu</h4>
+        <Modal
+          show={this.state.showCatering}
+          onHide={this._handleCloseCatering}
+          dialogClassName="custom-modal">
+          <Modal.Header closeButton>
+            <Modal.Title>{this.props.list.name} <a href={'../wp-content/themes/texsite/pdf/Catering_' + this.props.list.label + '.pdf'} target="_blank"><i className="fa fa-print" aria-hidden="true"/></a></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Catering Menu</h4>
 
-              <div className="smaller-screen-locations">
-                {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic} src={'../wp-content/themes/texsite/images/' + menuPic + '.jpg'}
-                                                                     alt="menu" width="100%"/>)}
-              </div>
+            <div className="smaller-screen-locations">
+              {this.props.list.cateringMenuUrl.map(menuPic => <img key={menuPic}
+                                                                   src={'../wp-content/themes/texsite/images/' + menuPic + '.jpg'}
+                                                                   alt="menu" width="100%"/>)}
+            </div>
 
-              <div className="large-screen-locations">
+            <div className="large-screen-locations">
 
-                <object data={'https://res.cloudinary.com/texadelphia/image/upload/v1526322543/Catering_' + this.props.list.label + '.pdf'} type="application/pdf" style={pdfStyle}>
-                  Your browser does not support objects
-                </object>
-              </div>
+              <object
+                data={'../wp-content/themes/texsite/pdf/Catering_' + this.props.list.label + '.pdf'}
+                type="application/pdf" style={pdfStyle}>
+                Your browser does not support objects
+              </object>
+            </div>
 
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this._handleCloseCatering}>Close</Button>
-            </Modal.Footer>
-          </Modal>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this._handleCloseCatering}>Close</Button>
+          </Modal.Footer>
+        </Modal>
 
       </Col>
 
