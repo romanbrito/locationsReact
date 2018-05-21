@@ -86,7 +86,7 @@ const MapComponent = compose(
 const Map = (props) => {
 
   return (
-    <Col lg={6}>
+    <Col sm={6} id="map">
       <MapComponent data={props.data}/>
     </Col>
   )

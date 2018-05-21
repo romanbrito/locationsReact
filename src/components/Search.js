@@ -32,12 +32,11 @@ class Search extends Component {
     return (
 
       <Col lg={6}>
-        <Row>
+        <Row id="search-area">
           <input
             type="search"
             className="input-search"
             name="search"
-            id="search"
             placeholder="Name, City, State"
             value={this.state.search}
             onChange={(e) => this.setState({search: e.target.value})}
@@ -46,37 +45,43 @@ class Search extends Component {
 
         {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
 
-        <ul className="locations-list">
-          {
-            this.state.locations.filter(location =>
-              location.name.search(reExp) !== -1 ||
-              location.address.search(reExp) !== -1 ||
-              location.zip.search(reExp) !== -1 ||
-              location.state.search(reExp) !== -1 ||
-              location.city.search(reExp) !== -1
-            )
-              .map(list =>
+        <Grid fluid>
+          <div id="update" className="search-location">
 
-                <li key={list.label}>
-                  <Grid fluid>
-                    <Col lg={6}>
-                      <h4>{list.name}</h4>
-                      <p>{list.address}</p>
-                      <p>{list.city} {list.state} {list.zip} </p>
-                      <a href="tel: + {list.phone}"> T. {list.phone}</a>
-                      <p>{list.hours1}</p>
-                      <p>{list.hours2}</p>
-                      <p>{list.hours3}</p>
-                      {list.miles && <p>Distance: {list.miles} miles</p>}
-                    </Col>
+            <ul className="searchresults">
+              {
+                this.state.locations.filter(location =>
+                  location.name.search(reExp) !== -1 ||
+                  location.address.search(reExp) !== -1 ||
+                  location.zip.search(reExp) !== -1 ||
+                  location.state.search(reExp) !== -1 ||
+                  location.city.search(reExp) !== -1
+                )
+                  .map(list =>
 
-                    <Menus
-                    list={list}/>
+                    <li key={list.label}>
+                      <Grid fluid>
+                        <Col lg={6}>
+                          <h4>{list.name}</h4>
+                          <p>{list.address}</p>
+                          <p>{list.city} {list.state} {list.zip} </p>
+                          <a href="tel: + {list.phone}"> T. {list.phone}</a>
+                          <p>{list.hours1}</p>
+                          <p>{list.hours2}</p>
+                          <p>{list.hours3}</p>
+                          {list.miles && <p>Distance: {list.miles} miles</p>}
+                        </Col>
 
-                  </Grid>
-                </li>
-              )}
-        </ul>
+                        <Menus
+                          list={list}/>
+
+
+                      </Grid>
+                    </li>
+                  )}
+            </ul>
+          </div>
+        </Grid>
       </Col>
 
     )
