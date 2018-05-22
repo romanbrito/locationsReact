@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Modal, Button, Col, Row, ButtonToolbar} from 'react-bootstrap'
-import 'font-awesome/css/font-awesome.min.css'
 import './Menus.css'
 
 
@@ -21,7 +20,7 @@ class Menus extends Component {
 
     return (
 
-      <Col lg={6}>
+      <Col lg={6} className="location-buttons">
         <Row>
           <ButtonToolbar>
             <Col lg={6} md={6} sm={6} xs={6} className="menu">

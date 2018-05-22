@@ -1,6 +1,3 @@
-.custom-modal {
-    width: 88%;
-}
 
 .large-screen-locations, .smaller-screen-locations {
     display: none;
@@ -48,4 +45,9 @@
 
 .menu {
     padding: 0;
+}
+
+i.fa.fa-print {
+    float: right;
+    padding-right: 2em;
 }

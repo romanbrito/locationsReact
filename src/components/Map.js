@@ -10,8 +10,8 @@ const googleMapURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey.goo
 const MapComponent = compose(
   withProps({
     googleMapURL: googleMapURL,
-    loadingElement: <div style={{height: `100%`}}/>,
-    containerElement: <div style={{height: `60vh`}}/>,
+    loadingElement: <div style={{height: `100%`, width: `100%`, position: `absolute`, top: 0, left: 0}}/>,
+    containerElement: <div style={{height: `71vh`}}/>,
     mapElement: <div style={{height: `100%`}}/>,
   }),
   withHandlers({
@@ -86,7 +86,7 @@ const MapComponent = compose(
 const Map = (props) => {
 
   return (
-    <Col lg={6}>
+    <Col sm={6} id="map">
       <MapComponent data={props.data}/>
     </Col>
   )
