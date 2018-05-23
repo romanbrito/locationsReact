@@ -48,7 +48,7 @@ const MapComponent = compose(
       return (<GoogleMap
           ref={props.zoomToMarkers}
           defaultZoom={8}
-          defaultCenter={{lat: -34.397, lng: 150.644}}>
+          defaultCenter={{lat: 29.7368233, lng: -95.513883}}>
           <MarkerClusterer
             onClick={props.onMarkerClustererClick}
             averageCenter
