@@ -13,7 +13,7 @@ const MapComponent = compose(
     googleMapURL: googleMapURL,
     loadingElement: <div style={{height: `100%`, width: `50%`, position: `absolute`, top: 0, left: 0}}/>,
     containerElement: <div style={{height: `71vh`}}/>,
-    mapElement: <div style={{height: `100%`}}/>,
+    mapElement: <div className="col-lg-6" style={{height: `100%`}}/>,
   }),
   withHandlers({
     onMarkerClustererClick: () => (markerClusterer) => {
@@ -54,8 +54,6 @@ const MapComponent = compose(
       return (
 
         <Row>
-
-          <Col sm={6} id="map">
             <GoogleMap
               ref={props.zoomToMarkers}
               defaultZoom={8}
@@ -76,7 +74,6 @@ const MapComponent = compose(
                 ))}
               </MarkerClusterer>
             </GoogleMap>
-          </Col>
 
           <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
 
@@ -88,7 +85,6 @@ const MapComponent = compose(
       return (
         <Row>
 
-          <Col sm={6} id="map">
             <GoogleMap
               defaultZoom={13}
               defaultCenter={props.data[0].coordinates}>
@@ -98,7 +94,6 @@ const MapComponent = compose(
                 onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + props.data[0].coordinates.lat + ',' + props.data[0].coordinates.lng, '_blank')}
               />
             </GoogleMap>
-          </Col>
 
           <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
 
