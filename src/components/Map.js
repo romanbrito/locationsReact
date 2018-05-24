@@ -1,5 +1,4 @@
 import React from 'react'
-import {Col, Row} from 'react-bootstrap'
 import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
@@ -53,7 +52,7 @@ const MapComponent = compose(
 
       return (
 
-        <Row>
+        <div>
             <GoogleMap
               ref={props.zoomToMarkers}
               defaultZoom={8}
@@ -77,14 +76,13 @@ const MapComponent = compose(
 
           <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
 
-        </Row>
+        </div>
       )
 
     } else {
 
       return (
-        <Row>
-
+        <div>
             <GoogleMap
               defaultZoom={13}
               defaultCenter={props.data[0].coordinates}>
@@ -96,8 +94,7 @@ const MapComponent = compose(
             </GoogleMap>
 
           <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
-
-        </Row>
+        </div>
       )
     }
   }

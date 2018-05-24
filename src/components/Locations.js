@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Grid, Row} from 'react-bootstrap'
 import data from '../json/locations.json'
-import Search from './Search'
 import Map from './Map'
 
 const arrayToObject  = (array) => {
@@ -24,9 +23,9 @@ class Locations extends Component {
     return (
       <div className="App">
         <Grid fluid>
-
+          <Row>
             <Map data={dataObj[loc] ? [dataObj[loc]] : data.locations}/>
-
+          </Row>
         </Grid>
       </div>
     )
