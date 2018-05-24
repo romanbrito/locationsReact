@@ -24,10 +24,9 @@ class Locations extends Component {
     return (
       <div className="App">
         <Grid fluid>
-          <Row>
+
             <Map data={dataObj[loc] ? [dataObj[loc]] : data.locations}/>
-            <Search data={dataObj[loc] ? [dataObj[loc]] : data.locations}/>
-          </Row>
+
         </Grid>
       </div>
     )

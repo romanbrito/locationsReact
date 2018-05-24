@@ -1,16 +1,17 @@
 import React from 'react'
-import {Col} from 'react-bootstrap'
+import {Col, Row} from 'react-bootstrap'
 import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import apiKey from '../apiKey.json'
+import Search from './Search'
 
 const googleMapURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey.googleMapsApi + '&v=3.exp&libraries=geometry,drawing,places'
 
 const MapComponent = compose(
   withProps({
     googleMapURL: googleMapURL,
-    loadingElement: <div style={{height: `100%`, width: `100%`, position: `absolute`, top: 0, left: 0}}/>,
+    loadingElement: <div style={{height: `100%`, width: `50%`, position: `absolute`, top: 0, left: 0}}/>,
     containerElement: <div style={{height: `71vh`}}/>,
     mapElement: <div style={{height: `100%`}}/>,
   }),
@@ -36,7 +37,12 @@ const MapComponent = compose(
 
           map.fitBounds(bounds)
 
+        },
+
+        distanceMatrixService: () => {
+          return new window.google.maps.DistanceMatrixService()
         }
+
       })
     }
   }),
@@ -45,39 +51,58 @@ const MapComponent = compose(
 )(props => {
     if (props.data.length > 1) {
 
-      return (<GoogleMap
-          ref={props.zoomToMarkers}
-          defaultZoom={8}
-          defaultCenter={{lat: 29.7368233, lng: -95.513883}}>
-          <MarkerClusterer
-            onClick={props.onMarkerClustererClick}
-            averageCenter
-            enableRetinaIcons
-            gridSize={15}
-          >
-            {props.data.map(marker => (
-              <Marker
-                key={marker.label}
-                position={marker.coordinates}
-                label={marker.label}
-                onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
-              />
-            ))}
-          </MarkerClusterer>
-        </GoogleMap>
+      return (
+
+        <Row>
+
+          <Col sm={6} id="map">
+            <GoogleMap
+              ref={props.zoomToMarkers}
+              defaultZoom={8}
+              defaultCenter={{lat: 29.7368233, lng: -95.513883}}>
+              <MarkerClusterer
+                onClick={props.onMarkerClustererClick}
+                averageCenter
+                enableRetinaIcons
+                gridSize={15}
+              >
+                {props.data.map(marker => (
+                  <Marker
+                    key={marker.label}
+                    position={marker.coordinates}
+                    label={marker.label}
+                    onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + marker.coordinates.lat + ',' + marker.coordinates.lng, '_blank')}
+                  />
+                ))}
+              </MarkerClusterer>
+            </GoogleMap>
+          </Col>
+
+          <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
+
+        </Row>
       )
 
     } else {
 
-      return (<GoogleMap
-          defaultZoom={13}
-          defaultCenter={props.data[0].coordinates}>
-          <Marker
-            position={props.data[0].coordinates}
-            label={props.data[0].label}
-            onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + props.data[0].coordinates.lat + ',' + props.data[0].coordinates.lng, '_blank')}
-          />
-        </GoogleMap>
+      return (
+        <Row>
+
+          <Col sm={6} id="map">
+            <GoogleMap
+              defaultZoom={13}
+              defaultCenter={props.data[0].coordinates}>
+              <Marker
+                position={props.data[0].coordinates}
+                label={props.data[0].label}
+                onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + props.data[0].coordinates.lat + ',' + props.data[0].coordinates.lng, '_blank')}
+              />
+            </GoogleMap>
+          </Col>
+
+          <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
+
+        </Row>
       )
     }
   }
@@ -86,9 +111,9 @@ const MapComponent = compose(
 const Map = (props) => {
 
   return (
-    <Col sm={6} id="map">
-      <MapComponent data={props.data}/>
-    </Col>
+
+    <MapComponent data={props.data}/>
+
   )
 }
 

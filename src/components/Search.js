@@ -1,12 +1,7 @@
 import React, {Component} from 'react'
-import apiKey from '../apiKey.json'
 import './Search.css'
 import {Grid, Col, Row} from 'react-bootstrap'
 import Menus from './Menus'
-
-const googleMapsClient = require('@google/maps').createClient({
-  key: apiKey.googleMapsApi
-})
 
 class Search extends Component {
   state = {
@@ -49,7 +44,7 @@ class Search extends Component {
 
           :''}
 
-        {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations)}
+        {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations, this.props.distanceMatrixService)}
 
         <Grid fluid>
           <div id="update" className="search-location">
@@ -93,33 +88,39 @@ class Search extends Component {
     )
   }
 
-  _distanceMatrix = (origins, locations) => {
-    const destinations = locations.map(location => location.coordinates)
+  _distanceMatrix = (origins, locations, distanceMatrixService) => {
+    const service = distanceMatrixService()
 
-    googleMapsClient.distanceMatrix({
+    const destinations = locations.map(location => location.coordinates)
+    // prop form map
+
+    service.getDistanceMatrix({
       origins: origins,
       destinations: destinations,
-      mode: 'driving',
-      units: 'imperial',
-    }, (err, res) => {
-      if (res) {
-        const distance = res.json.rows[0].elements
+      travelMode: 'DRIVING',
+      unitSystem: window.google.maps.UnitSystem.IMPERIAL,
+      avoidHighways: false,
+      avoidTolls: false
+    }, (response, status) => {
+      if (status === 'OK') {
+        const distance = response.rows[0].elements
 
         // merging distance with locations array
-        const location_distance = distance.map(function (element, index) {
+        const location_distance = distance.map( (element, index) => {
           locations[index].distance = element.distance.value;
           locations[index].miles = element.distance.text;
           return locations[index];
-        }).sort(function (a, b) {  // sorting locations array
+        }).sort((a, b) => {  // sorting locations array
           return a.distance - b.distance;
         })
 
         this.setState({locations: location_distance, isGeoSorted: true})
 
       } else {
-        console.log('Geo Location error')
+        console.log('Geocode was not successful due to: ' + status);
       }
     })
+
   }
 
 }
