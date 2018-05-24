@@ -13,7 +13,7 @@ const MapComponent = compose(
     googleMapURL: googleMapURL,
     loadingElement: <div style={{height: `100%`, width: `50%`, position: `absolute`, top: 0, left: 0}}/>,
     containerElement: <div style={{height: `71vh`}}/>,
-    mapElement: <div className="col-lg-6" style={{height: `100%`}}/>,
+    mapElement: <div id="map" className="col-sm-6" style={{height: `100%`}}/>,
   }),
   withHandlers({
     onMarkerClustererClick: () => (markerClusterer) => {
