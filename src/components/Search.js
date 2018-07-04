@@ -66,7 +66,7 @@ class Search extends Component {
                           <h4>{list.name}</h4>
                           <p>{list.address}</p>
                           <p>{list.city} {list.state} {list.zip} </p>
-                          <a href="tel: + {list.phone}"> T. {list.phone}</a>
+                          <a href={'tel:' + list.phone}> T. {list.phone}</a>
                           <p>{list.hours1}</p>
                           <p>{list.hours2}</p>
                           <p>{list.hours3}</p>
