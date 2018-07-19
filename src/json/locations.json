@@ -241,6 +241,26 @@
       "cateringMenuUrl": ["Catering_WE"]
     },
     {
+      "id": "houston-montrose",
+      "name": "Houston Montrose",
+      "address": "3407 MONTROSE BLVD SUITE A8",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77006",
+      "phone": "832-941-0662",
+      "hours1": "COMING SOON!",
+      "hours2": "",
+      "hours3": "",
+      "place_id": "",
+      "label": "ME",
+      "coordinates": {
+        "lat": 29.7419496,
+        "lng": -95.3928309
+      },
+      "houseMenuUrl": [""],
+      "cateringMenuUrl": [""]
+    },
+    {
       "id": "denton",
       "name": "Denton",
       "address": "1120 West Hickory",
