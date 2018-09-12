@@ -63,7 +63,7 @@
     {
       "id": "las-colinas",
       "name": "Las Colinas",
-      "address": "7601 N MacArthur Blvd # 105",
+      "address": "7601 N MacArthur Blvd #105",
       "city": "Irving",
       "state": "TX",
       "zip": "75063",
@@ -223,7 +223,7 @@
     {
       "id": "houston-westheimer",
       "name": "Houston Westheimer",
-      "address": "8383 WESTHEIMER RD",
+      "address": "8383 Westheimer Road #114",
       "city": "Houston",
       "state": "TX",
       "zip": "77063",
@@ -243,7 +243,7 @@
     {
       "id": "houston-montrose",
       "name": "Houston Montrose",
-      "address": "3407 MONTROSE BLVD SUITE A8",
+      "address": "3407 Montrose Blvd suite a-8",
       "city": "Houston",
       "state": "TX",
       "zip": "77006",

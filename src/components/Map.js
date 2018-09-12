@@ -89,7 +89,7 @@ const MapComponent = compose(
               <Marker
                 position={props.data[0].coordinates}
                 label={props.data[0].label}
-                onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + props.data[0].coordinates.lat + ',' + props.data[0].coordinates.lng, '_blank')}
+                onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=texadelphia' + props.data[0].address + ',' + props.data[0].city + ',' + props.data[0].state + ' ' + props.data[0].zip)}
               />
             </GoogleMap>
 

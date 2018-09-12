@@ -43,7 +43,7 @@ class Menus extends Component {
           <ButtonToolbar>
             <Button
               className="menu-button-directions"
-              onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + this.props.list.address + ',' + this.props.list.city + ',' + this.props.list.state + '_blank')}>
+              onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=texadelphia,' + this.props.list.address + ',' + this.props.list.city + ',' + this.props.list.state + ' ' + this.props.list.zip)}>
               Directions
             </Button>
           </ButtonToolbar>
