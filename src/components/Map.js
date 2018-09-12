@@ -68,7 +68,7 @@ const MapComponent = compose(
                     key={marker.label}
                     position={marker.coordinates}
                     label={marker.label}
-                    onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=texadelphia,' + props.data[0].address + ',' + props.data[0].city + ',' + props.data[0].state + ' ' + props.data[0].zip)}
+                    onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=texadelphia,' + marker.address + ',' + marker.city + ',' + marker.state + ' ' + marker.zip)}
                   />
                 ))}
               </MarkerClusterer>
