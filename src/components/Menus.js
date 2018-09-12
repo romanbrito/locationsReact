@@ -43,7 +43,7 @@ class Menus extends Component {
           <ButtonToolbar>
             <Button
               className="menu-button-directions"
-              onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + this.props.list.coordinates.lat + ',' + this.props.list.coordinates.lng, '_blank')}>
+              onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=' + this.props.list.address + ',' + this.props.list.city + ',' + this.props.list.state + '_blank')}>
               Directions
             </Button>
           </ButtonToolbar>
@@ -54,7 +54,9 @@ class Menus extends Component {
           onHide={this._handleCloseMenu}
           dialogClassName="custom-modal">
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.list.name} <a href={'../wp-content/themes/texsite/pdf/House_' + this.props.list.label + '.pdf'} target="_blank"><i className="fa fa-print" aria-hidden="true"/></a></Modal.Title>
+            <Modal.Title>{this.props.list.name} <a
+              href={'../wp-content/themes/texsite/pdf/House_' + this.props.list.label + '.pdf'} target="_blank"><i
+              className="fa fa-print" aria-hidden="true"/></a></Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>House Menu</h4>
@@ -87,7 +89,9 @@ class Menus extends Component {
           onHide={this._handleCloseCatering}
           dialogClassName="custom-modal">
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.list.name} <a href={'../wp-content/themes/texsite/pdf/Catering_' + this.props.list.label + '.pdf'} target="_blank"><i className="fa fa-print" aria-hidden="true"/></a></Modal.Title>
+            <Modal.Title>{this.props.list.name} <a
+              href={'../wp-content/themes/texsite/pdf/Catering_' + this.props.list.label + '.pdf'} target="_blank"><i
+              className="fa fa-print" aria-hidden="true"/></a></Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>Catering Menu</h4>
