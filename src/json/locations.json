@@ -261,6 +261,26 @@
       "cateringMenuUrl": ["Catering_ME"]
     },
     {
+      "id": "galveston",
+      "name": "Galveston",
+      "address": "1228 Seawall Blvd",
+      "city": "Galveston",
+      "state": "TX",
+      "zip": "77550",
+      "phone": "409-497-2953",
+      "hours1": "Coming Soon!",
+      "hours2": "",
+      "hours3": "",
+      "place_id": "",
+      "label": "GV",
+      "coordinates": {
+        "lat": 29.298113,
+        "lng": -94.778586
+      },
+      "houseMenuUrl": ["House_GV"],
+      "cateringMenuUrl": ["Catering_GV"]
+    },
+    {
       "id": "denton",
       "name": "Denton",
       "address": "1120 West Hickory",
