@@ -3,6 +3,7 @@ import {compose, withProps, lifecycle, withHandlers} from 'recompose'
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 import {MarkerClusterer} from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import apiKey from '../apiKey.json'
+import {destination} from '../utilities'
 import Search from './Search'
 
 const googleMapURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey.googleMapsApi + '&v=3.exp&libraries=geometry,drawing,places'
@@ -68,7 +69,7 @@ const MapComponent = compose(
                     key={marker.label}
                     position={marker.coordinates}
                     label={marker.label}
-                    onClick={e => window.open('https://www.google.com/maps/dir/?api=1&destination=texadelphia,' + marker.address + ',' + marker.city + ',' + marker.state + ' ' + marker.zip)}
+                    onClick={e => window.open(destination(marker.address, marker.city, marker.state, marker.zip))}
                   />
                 ))}
               </MarkerClusterer>
