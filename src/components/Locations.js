@@ -9,7 +9,7 @@ class Locations extends Component {
   }
 
   componentWillMount() {
-    fetch('http://www.texadelphia.com/wp-content/themes/texsite/json/locations.json', {method: 'GET'})
+    fetch('https://www.texadelphia.com/wp-content/themes/texsite/json/locations.json', {method: 'GET'})
       .then(res => res.json())
       .then(data => this.setState({data}))
   }
