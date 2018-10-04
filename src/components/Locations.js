@@ -1,30 +1,31 @@
 import React, {Component} from 'react'
 import {Grid, Row} from 'react-bootstrap'
-import data from '../json/locations.json'
 import Map from './Map'
 
-const arrayToObject  = (array) => {
-
-  return array.reduce( (obj, item) => {
-    obj[item.id] = item
-    return obj
-  }, {})
-
-}
-
-const dataObj = arrayToObject(data.locations)
-
 class Locations extends Component {
+
+  state = {
+    data: null
+  }
+
+  componentWillMount() {
+    fetch('http://www.texadelphia.com/wp-content/themes/texsite/json/locations.json', {method: 'GET'})
+      .then(res => res.json())
+      .then(data => this.setState({data}))
+  }
 
   render() {
     // should work too if url is locations-menu
     const loc = this.props.match.params.location
+    const {data} = this.state
 
     return (
       <div className="App">
         <Grid fluid>
           <Row>
-            <Map data={dataObj[loc] ? [dataObj[loc]] : data.locations}/>
+            {data ? <Map data={arrayToObject(data.locations)[loc] ? [arrayToObject(data.locations)[loc]] : data.locations}/>:
+            <p>Loading...</p>
+            }
           </Row>
         </Grid>
       </div>
@@ -33,3 +34,13 @@ class Locations extends Component {
 }
 
 export default Locations
+
+// utilities
+const arrayToObject = (array) => {
+
+  return array.reduce((obj, item) => {
+    obj[item.id] = item
+    return obj
+  }, {})
+
+}
