@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {distanceMatrix} from '../utilities'
 import './Search.css'
 import {Grid, Col, Row} from 'react-bootstrap'
 import Menus from './Menus'
@@ -6,28 +7,28 @@ import Menus from './Menus'
 class Search extends Component {
   state = {
     search: '',
-    currentPosition: null,
     locations: this.props.data,
-    isGeoSorted: false
   }
 
   componentWillMount() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position =>
-          this.setState({currentPosition: {lat: position.coords.latitude, lng: position.coords.longitude}}),
-        () => console.log('error'))
+      navigator.geolocation.getCurrentPosition(currentPosition => {
+          const origin = {lat: currentPosition.coords.latitude, lng: currentPosition.coords.longitude}
+          const locations = this.props.data
+          this.setDistance(origin, locations)
+        },
+        () => console.log('geo location error'))
     }
   }
 
   render() {
 
-    const locations = this.props.data
     const reExp = new RegExp(this.state.search, "i")
 
     return (
 
       <Col sm={6}>
-        {locations.length > 1 ?
+        {this.state.locations.length > 1 ?
 
           <Row id="search-area">
           <input
@@ -43,8 +44,6 @@ class Search extends Component {
         </Row>
 
           :''}
-
-        {this.state.currentPosition && !this.state.isGeoSorted && this._distanceMatrix([this.state.currentPosition], locations, this.props.distanceMatrixService)}
 
         <Grid fluid>
           <div id="update" className="search-location">
@@ -88,39 +87,22 @@ class Search extends Component {
     )
   }
 
-  _distanceMatrix = (origins, locations, distanceMatrixService) => {
-    const service = distanceMatrixService()
-
+  setDistance = (origin, locations) => {
     const destinations = locations.map(location => location.coordinates)
-    // prop form map
 
-    service.getDistanceMatrix({
-      origins: origins,
-      destinations: destinations,
-      travelMode: 'DRIVING',
-      unitSystem: window.google.maps.UnitSystem.IMPERIAL,
-      avoidHighways: false,
-      avoidTolls: false
-    }, (response, status) => {
-      if (status === 'OK') {
-        const distance = response.rows[0].elements
+    const distance = distanceMatrix(origin, destinations)
 
-        // merging distance with locations array
-        const location_distance = distance.map( (element, index) => {
-          locations[index].distance = element.distance.value;
-          locations[index].miles = element.distance.text;
-          return locations[index];
-        }).sort((a, b) => {  // sorting locations array
-          return a.distance - b.distance;
-        })
-
-        this.setState({locations: location_distance, isGeoSorted: true})
-
-      } else {
-        console.log('Geocode was not successful due to: ' + status);
-      }
+    // merging distance array with locations array
+    const location_distance = distance.map((element, index) => {
+      locations[index].distance = element
+      locations[index].miles = element / 1609.344
+      return locations[index]
+    }).sort((a, b) => { // sorting locations array
+      return a.distance - b.distance
     })
 
+
+    this.setState({locations: location_distance})
   }
 
 }
