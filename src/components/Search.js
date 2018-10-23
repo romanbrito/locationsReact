@@ -69,7 +69,6 @@ class Search extends Component {
                           <p>{list.hours1}</p>
                           <p>{list.hours2}</p>
                           <p>{list.hours3}</p>
-                          {list.miles && <p>Distance: {list.miles} miles</p>}
                         </Col>
 
                         <Menus

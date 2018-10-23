@@ -38,11 +38,6 @@ const MapComponent = compose(
           map.fitBounds(bounds)
 
         },
-
-        distanceMatrixService: () => {
-          return new window.google.maps.DistanceMatrixService()
-        }
-
       })
     }
   }),
@@ -75,7 +70,7 @@ const MapComponent = compose(
               </MarkerClusterer>
             </GoogleMap>
 
-          <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
+          <Search data={props.data}/>
 
         </div>
       )
@@ -94,7 +89,7 @@ const MapComponent = compose(
               />
             </GoogleMap>
 
-          <Search data={props.data} distanceMatrixService={props.distanceMatrixService}/>
+          <Search data={props.data}/>
         </div>
       )
     }
